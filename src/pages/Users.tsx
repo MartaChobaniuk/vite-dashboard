@@ -9,9 +9,7 @@ export const Users = () => {
 
   const sortByName = () => {
     const sorted = [...sortedUsers].sort((a, b) =>
-      ascending
-        ? a.name.localeCompare(b.name)
-        : b.name.localeCompare(a.name)
+      ascending ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
     );
     setSortedUsers(sorted);
     setAscending(!ascending);
@@ -21,22 +19,31 @@ export const Users = () => {
     <div>
       <h2 className="text-2xl font-semibold mb-4">👥 Users</h2>
       <div className="overflow-x-auto">
-        <table className="min-w-full border border-gray-300">
+        <table className="min-w-full border border-gray-300 dark:border-gray-700">
           <thead>
-            <tr className="bg-gray-100">
-              <th className="p-2 border-b text-left cursor-pointer" onClick={sortByName}>
-                Name <ArrowUpDown className="inline-block w-4 h-4 ml-1" />
+            <tr className="bg-gray-100 dark:bg-gray-800 text-left text-gray-700 dark:text-gray-200">
+              <th
+                className="p-2 border-b dark:border-gray-700 cursor-pointer"
+                onClick={sortByName}
+              >
+                Name <ArrowUpDown className="inline w-4 h-4 ml-1" />
               </th>
-              <th className="p-2 border-b text-left">Email</th>
-              <th className="p-2 border-b text-left">Role</th>
+              <th className="p-2 border-b dark:border-gray-700">Email</th>
+              <th className="p-2 border-b dark:border-gray-700">Role</th>
             </tr>
           </thead>
           <tbody>
             {sortedUsers.map((user) => (
-              <tr key={user.id} className="hover:bg-gray-50">
-                <td className="p-2 border-b">{user.name}</td>
-                <td className="p-2 border-b">{user.email}</td>
-                <td className="p-2 border-b">{user.role}</td>
+              <tr key={user.id} className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                <td className="p-2 border-b dark:border-gray-700 text-gray-900 dark:text-gray-100">
+                  {user.name}
+                </td>
+                <td className="p-2 border-b dark:border-gray-700 text-gray-900 dark:text-gray-100">
+                  {user.email}
+                </td>
+                <td className="p-2 border-b dark:border-gray-700 text-gray-900 dark:text-gray-100">
+                  {user.role}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -44,4 +51,4 @@ export const Users = () => {
       </div>
     </div>
   );
-}
+};
