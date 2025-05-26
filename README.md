@@ -4,7 +4,7 @@ Includes routing, reusable components, dark mode toggle, and mock data.
 
 Setup Instructions
 # 1. Clone the repository
-git clone https://github.com/your-username/vite-dashboard.git
+git clone https://github.com/MartaChobaniuk/vite-dashboard.git
 cd vite-dashboard
 
 # 2. Install dependencies
